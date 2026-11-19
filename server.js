@@ -32,21 +32,6 @@ const requestListener = (request, response) => {
     } else {
         response.end("<h1>Halaman tidak ditemukan</h1>");
     };
-    // let body = [];
-    
-    // if (method == 'GET') {
-    //     response.end('<h1> HAII AKU GET</h1>');
-    // };
-    // if (method == 'POST') {
-    //     request.on('data', (chunk) => {
-    //         body.push(chunk);
-    //     });
-    //     request.on('end', () => {
-    //         body = Buffer.concat(body).toString();
-    //         const name = JSON.parse(body).name;
-    //         response.end(`<h1>${name}</h1>`);
-    //     });
-    // };
 };
 
 const server = http.createServer(requestListener);
