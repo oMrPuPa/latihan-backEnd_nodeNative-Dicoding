@@ -2,6 +2,7 @@ import http from "http";
 
 const requestListener = (request, response) => {
     response.setHeader('Content-Type', 'text/html');
+    response.setHeader('Powered-By', 'Node.js');
     const method = request.method;
     const url = request.url;
 
@@ -23,7 +24,7 @@ const requestListener = (request, response) => {
                 body.push(chunk);
             });
             request.on('end', () => {
-                response.setHeader('Content-Type', 'text/html');
+                response.setHeader('Content-Type', 'application/json');
                 body = Buffer.concat(body).toString();
                 const name = JSON.parse(body).name;
                 response.statusCode = 200;
